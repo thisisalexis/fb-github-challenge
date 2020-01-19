@@ -1,8 +1,11 @@
 package com.hackerrank.github.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Actor {
     private Long id;
     private String login;
+    @JsonProperty("avatar_url")
     private String avatar;
 
     public Actor() {

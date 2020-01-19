@@ -1,5 +1,8 @@
 package com.hackerrank.github.model;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.sql.Timestamp;
 
 public class Event {
@@ -7,6 +10,7 @@ public class Event {
     private String type;
     private Actor actor;
     private Repo repo;
+    @JsonProperty("created_at")
     private Timestamp createdAt;
 
     public Event() {
