@@ -52,7 +52,7 @@ public class ResourcesControllerTest {
     public void eraseAllRecords() throws Exception {
         /**
          *
-         * Erase all the event records including actor and repository records
+         * Erase all the event records including actor and com.hackerrank.github.repository records
          */
         mockMvc.perform(delete("/erase"))
             .andExpect(status().isOk());

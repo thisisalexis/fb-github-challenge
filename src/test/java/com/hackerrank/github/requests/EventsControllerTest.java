@@ -284,14 +284,14 @@ public class EventsControllerTest {
      *
      * @throws Exception
      *
-     * It tests finding events by repository id
+     * It tests finding events by com.hackerrank.github.repository id
      */
     @Test
     @Order(5)
     public void findAllEventsByRepoId() throws Exception {
         /**
          *
-         * Find all the events by repository id 1
+         * Find all the events by com.hackerrank.github.repository id 1
          *
          * The request response is:
          * [
@@ -344,14 +344,14 @@ public class EventsControllerTest {
      *
      * @throws Exception
      *
-     * It tests finding events by non-existing repository id
+     * It tests finding events by non-existing com.hackerrank.github.repository id
      */
     @Test
     @Order(6)
     public void findAllEventsByNonExistingRepoId() throws Exception {
         /**
          *
-         * Find all the events by repository id 3
+         * Find all the events by com.hackerrank.github.repository id 3
          */
         mockMvc.perform(get("/events/repos/3"))
                 .andExpect(status().isNotFound());
@@ -438,14 +438,14 @@ public class EventsControllerTest {
      *
      * @throws Exception
      *
-     * It tests finding events by repository id and actor id
+     * It tests finding events by com.hackerrank.github.repository id and actor id
      */
     @Test
     @Order(9)
     public void findAllEventsByRepoIdAndActorId() throws Exception {
         /**
          *
-         * Find all the events by repository id 1 and actor id 1
+         * Find all the events by com.hackerrank.github.repository id 1 and actor id 1
          *
          * The request response is:
          * [
@@ -483,14 +483,14 @@ public class EventsControllerTest {
      *
      * @throws Exception
      *
-     * It tests finding events by repository id and actor id
+     * It tests finding events by com.hackerrank.github.repository id and actor id
      */
     @Test
     @Order(10)
     public void findAllEventsByNonExistingRepoIdAndNonExistingActorId() throws Exception {
         /**
          *
-         * Find all the events by non-existing repository id 4 and non-existing actor id 5
+         * Find all the events by non-existing com.hackerrank.github.repository id 4 and non-existing actor id 5
          */
         mockMvc.perform(get("/events/repos/4/actors/5"))
                 .andExpect(status().isNotFound());
@@ -500,14 +500,14 @@ public class EventsControllerTest {
      *
      * @throws Exception
      *
-     * It tests finding events by repository id and actor id
+     * It tests finding events by com.hackerrank.github.repository id and actor id
      */
     @Test
     @Order(11)
     public void findAllEventsByNonExistingRepoIdAndActorId() throws Exception {
         /**
          *
-         * Find all the events by non-existing repository id 4 and actor id 1
+         * Find all the events by non-existing com.hackerrank.github.repository id 4 and actor id 1
          */
         mockMvc.perform(get("/events/repos/4/actors/1"))
                 .andExpect(status().isNotFound());
@@ -517,14 +517,14 @@ public class EventsControllerTest {
      *
      * @throws Exception
      *
-     * It tests finding events by repository id and actor id
+     * It tests finding events by com.hackerrank.github.repository id and actor id
      */
     @Test
     @Order(12)
     public void findAllEventsByRepoIdAndNonExistingActorId() throws Exception {
         /**
          *
-         * Find all the events by repository id 1 and non-existing actor id 5
+         * Find all the events by com.hackerrank.github.repository id 1 and non-existing actor id 5
          */
         mockMvc.perform(get("/events/repos/1/actors/5"))
                 .andExpect(status().isNotFound());

@@ -83,14 +83,14 @@ public class NoResourcesEventsControllerTest {
      *
      * @throws Exception
      *
-     * It tests finding all the events by repository id and actor id
+     * It tests finding all the events by com.hackerrank.github.repository id and actor id
      */
     @Test
     @Order(2)
     public void findAllEventsByNonExistingRepoIdAndNonExistingActorId() throws Exception {
         /**
          *
-         * Find all the events by non-existing repository id 1 and non-existing actor id 1
+         * Find all the events by non-existing com.hackerrank.github.repository id 1 and non-existing actor id 1
          */
         mockMvc.perform(get("/events/repos/1/actors/1"))
                 .andExpect(status().isNotFound());
@@ -124,7 +124,7 @@ public class NoResourcesEventsControllerTest {
     public void findAllEventsByNonExistingRepoId() throws Exception {
         /**
          *
-         * Find all the events by non-existing repository id 1
+         * Find all the events by non-existing com.hackerrank.github.repository id 1
          */
         mockMvc.perform(get("/events/repos/1"))
                 .andExpect(status().isNotFound());

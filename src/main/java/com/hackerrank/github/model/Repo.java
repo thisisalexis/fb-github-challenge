@@ -1,8 +1,20 @@
 package com.hackerrank.github.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "repos")
 public class Repo {
+
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column
     private String name;
+
+    @Column
     private String url;
 
     public Repo() {

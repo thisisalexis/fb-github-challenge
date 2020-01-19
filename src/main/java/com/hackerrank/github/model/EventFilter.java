@@ -7,17 +7,8 @@ package com.hackerrank.github.model;
  */
 public class EventFilter {
 
-    private Long id;
     private Long actorId;
     private Long repoId;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Long getActorId() {
         return actorId;

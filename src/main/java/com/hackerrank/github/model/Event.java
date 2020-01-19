@@ -1,20 +1,31 @@
 package com.hackerrank.github.model;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
 
+@Entity
+@Table(name = "events")
 public class Event {
+
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column
     private String type;
+
     private Actor actor;
     private Repo repo;
+
     @JsonProperty("created_at")
+    @Column
     private Timestamp createdAt;
 
-    public Event() {
-    }
+    public Event() {}
 
     public Event(Long id, String type, Actor actor, Repo repo, Timestamp createdAt) {
         this.id = id;
@@ -63,4 +74,11 @@ public class Event {
     public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
     }
+
+    @PrePersist
+    @JsonIgnore
+    public void prePersist() {
+        createdAt = new Timestamp(System.currentTimeMillis());
+    }
+
 }

@@ -2,10 +2,21 @@ package com.hackerrank.github.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "actors")
 public class Actor {
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column
     private String login;
+
     @JsonProperty("avatar_url")
+    @Column
     private String avatar;
 
     public Actor() {
